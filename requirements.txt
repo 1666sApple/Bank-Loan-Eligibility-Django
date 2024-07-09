@@ -1,0 +1,8 @@
+scikit-learn
+pandas
+jupyter
+numpy
+django
+torch
+imblearn
+tqdm
