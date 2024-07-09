@@ -44,7 +44,6 @@ source .venv/bin/activate  # On Windows use `.venv\Scripts\activate`
 ```
 3. Install the required packages:
 ```sh
-Copy code
 pip install -r requirements.txt
 ```
 ## Usage
@@ -52,7 +51,6 @@ pip install -r requirements.txt
 The data processing script loads and preprocesses the dataset, including handling missing values, encoding categorical features, and scaling numerical features.
 
 ```python
-Copy code
 from loan_eligibility.data_processing import load_and_process_data
 
 X_train, X_val, y_train, y_val = load_and_process_data('data/bankloan.csv')
@@ -61,7 +59,6 @@ X_train, X_val, y_train, y_val = load_and_process_data('data/bankloan.csv')
 The dataset script creates a custom PyTorch dataset for loan eligibility.
 
 ```python
-Copy code
 from loan_eligibility.dataset import LoanEligibilityDataset
 
 train_dataset = LoanEligibilityDataset(X_train, y_train)
@@ -71,7 +68,6 @@ val_dataset = LoanEligibilityDataset(X_val, y_val)
 The training script handles the training and validation of the model, saving the best model based on validation accuracy.
 
 ```python
-Copy code
 from loan_eligibility.models import AdaptiveSBCODNFN, CNN1D
 from loan_eligibility.train import train
 
@@ -83,7 +79,6 @@ trained_model = train(model, train_loader, val_loader, epochs=50, lr=0.001, save
 To run the complete workflow, use the main.py script:
 
 ```sh
-Copy code
 python loan_eligibility/main.py
 ```
 
